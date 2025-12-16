@@ -12,4 +12,6 @@ public interface CustomUserRepository extends JpaRepository<CustomUser, UUID> {
     // Method will be called within UserDetailsService
     Optional<CustomUser> findUserByUsername(String username);
 
+
+    Optional<CustomUser> findByUsername(String username);
 }

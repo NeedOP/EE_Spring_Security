@@ -1,5 +1,6 @@
 package com.krillinator.spring_security.user;
 
+import com.krillinator.spring_security.todo.Todo;
 import com.krillinator.spring_security.user.authority.UserRole;
 import jakarta.persistence.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -116,4 +117,6 @@ public class CustomUser {
     public void setRoles(Set<UserRole> roles) {
         this.roles = roles;
     }
+    @OneToMany(mappedBy = "user")
+    private Set<Todo> todos;
 }
